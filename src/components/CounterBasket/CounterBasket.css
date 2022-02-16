@@ -1,0 +1,15 @@
+.counter-basket {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #FF6347;
+    border-radius: 15px;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #FFFFFF;
+    z-index: 2;
+    left: 15px;
+    top: -10px;
+}
