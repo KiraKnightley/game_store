@@ -1,31 +1,27 @@
-import './App.css';
-import {Route, Routes, Outlet} from "react-router-dom";
-import HomePage from "./components/pages/home-page/HomePage";
-import Header from "./components/header/Header";
+import {BrowserRouter as Router, Route, Routes} from "react-router-dom";
 import {Provider} from "react-redux";
 import {store} from "./redux/store";
-
+import HomePage from "./components/pages/HomePage/HomePage";
+import Header from "./components/Header/Header";
+import GamePage from "./components/pages/GamePage/GamePage";
+import OrderPage from "./components/pages/OrderPage/OrderPage";
+import './App.css';
 
 function App() {
     return (
-        <Provider store={store}> {/*подключаем redux*/}
-            <Routes>
-                <Route path={'/'} element={<Layout />}>
-                    <Route index element={<HomePage />}/>
-                </Route>
-            </Routes>
+        <Provider store={ store }> {/*подключаем redux*/}
+            <Router>
+                <div className={"App"}>
+                    <Header />
+                    <Routes>
+                        <Route path={"/"} element={<HomePage />} />
+                        <Route path={"/app/:title"} element={<GamePage />} />
+                        <Route path={'/order'} element={<OrderPage />}  />
+                    </Routes>
+                </div>
+            </Router>
         </Provider>
     );
-}
-function Layout(){
-    return (
-        <div className="App">
-            <Header />
-            <main>
-                <Outlet/>
-            </main>
-        </div>
-    )
 }
 
 export default App;

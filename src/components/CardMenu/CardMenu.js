@@ -14,17 +14,15 @@ function CardMenu({ items, onClick }) {
                                     price={game.price}/>)
                     : 'Корзина пуста'}
             </div>
-            {
-                items.length > 0 ?
-                    <div className={'.card-menu__arrange'}>
-                        <div className={'.card-menu__total-price'}>
+            { items.length > 0 ?
+                    <div className={'card-menu__arrange'}>
+                        <div className={'card-menu__total-price'}>
                             <span>Итого: </span>
                             <span>{calcTotalPrice(items)} руб.</span>
                         </div>
                         <Button type={'primary'} size={'m'} onClick={ onClick }>Оформить заказ</Button>
                     </div>
-                    : null
-            }
+                : null }
         </div>
     )
 }
