@@ -1,1 +1,1 @@
-https://kiraknightley.github.io/game_store/
+https://kiraknightley.github.io/game_store/public/
